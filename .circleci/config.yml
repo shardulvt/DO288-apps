@@ -5,8 +5,7 @@ jobs:
       - image: cimg/openjdk:17.0.0
     steps:
       - checkout
-      - run: cd hello-java/app-src/
-      - run: mvn clean install
+      - run: cd hello-java/app-src/ ;mvn clean install
 workflows:
   JAVA-workflow:
     jobs:
