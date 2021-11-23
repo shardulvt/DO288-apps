@@ -1,15 +1,12 @@
 version: 2.1
 jobs:
-  say-hello:
+  my-java:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/openjdk:17.0.0
     steps:
       - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-
+      - run: mvn clean install
 workflows:
-  say-hello-workflow:
+  JAVA-workflow:
     jobs:
-      - say-hello
+      - my-java
